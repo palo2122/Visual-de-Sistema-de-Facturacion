@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>VentasPrueba</title>
+</head>
+<body>
+    <div id="padre">
+        <thead>
+            <div id="part1">
+                <p>Productos</p>
+                <select id="Productos" class="caja">
+                </select>
+            </div>
+            <div id="part2">
+                <p>Precio</p>
+                <select type="text" id="precio" class="caja">
+                </select>
+            </div>
+            <div id="part3">
+                <p>Cantidad</p>
+                <input type="number" id="cantidad" class="caja">  
+            </div>
+        </thead>
+    </div>
+    <button type="button" name="button" id="button" onclick="continuar()">continuar</button>
+    <table id="info">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>SubTotal</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="asd">
+        <div>
+            <p>SubTotal</p>
+            <input type="text" id="SubTotal" class="caja">
+        </div>
+        <div>
+            <p>IGV</p>
+            <input type="text" id="IGV" class="caja">
+        </div>
+        <div>
+            <p>Total:</p>
+            <input type="text" id="Total" class="caja"></br>
+        </div>
+    </div>
+</body>
+</html>

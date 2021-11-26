@@ -53,3 +53,5 @@ router.post('/seleccion', (req, res)=>{
         }
     })
 })
+
+module.exports = router;

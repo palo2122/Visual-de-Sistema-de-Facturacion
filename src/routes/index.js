@@ -1,10 +1,10 @@
-const { render } = require('ejs')
+const { render } = require('ejs');
 const fs = require('fs')
 const express = require('express')
 const router = express.Router()
 const client = require('../libs/connects')()
 
-router.get('/comprar', (req, res)=>{
+router.get('/ventas', (req, res)=>{
     res.render('ventas')
 })
 
@@ -43,7 +43,7 @@ router.post('/seleccion', (req, res)=>{
             const collection = client.db("tienda").collection("productoPrecio")
             collection.find({nombre:{$eq:nombreLocal}}).toArray((err, result)=>{
                 if (!err) {
-                    res.render('seleccion',{datos:result})
+                    res.render('ventas',{datos:result})
                 }else{
                     res.send("'resultado':[{'respuesta':'error al traer la data'}, {'mensaje':"+ err +"}]")
                 }

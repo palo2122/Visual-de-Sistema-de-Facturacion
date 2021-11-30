@@ -4,8 +4,8 @@ const express = require('express')
 const router = express.Router()
 const client = require('../libs/connects')()
 
-router.get('/ventas', (req, res)=>{
-    res.render('ventas')
+router.get('/', (req, res)=>{
+    res.render('registrar')
 })
 
 router.get('/', (req, res)=>{
@@ -29,7 +29,8 @@ router.post('/agregarProducto', (req,res)=>{
     client.connect(async (err)=>{
         if (!err) {
             const collection = client.db("tienda").collection("productoPrecio")
-            collection.inserOne( req.body )
+            console.log(req.body)
+            collection.insertOne( req.body )
             res.send("Resultado:[{'resuesta':'OK'}]")
         }else{
             res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")

@@ -8,6 +8,10 @@ router.get('/', (req, res)=>{
     res.render('registrar')
 })
 
+router.get('/vender',(req,res)=>{
+    res.render('ventas')
+})
+
 router.get('/', (req, res)=>{
     res.send('index', {nombre:"Python", dia:"Lunes", dias:["Lunes", "Martes", "Miercoles", "..."]})
 })
@@ -38,11 +42,11 @@ router.post('/agregarProducto', (req,res)=>{
     })
 })
 
-router.post('/seleccion', (req, res)=>{
+router.get('/seleccion', (req, res)=>{
     client.connect(async (err)=>{
         if(!err){
             const collection = client.db("tienda").collection("productoPrecio")
-            collection.find({nombre:{$eq:nombreLocal}}).toArray((err, result)=>{
+            collection.find().toArray((err, result)=>{
                 if (!err) {
                     res.render('ventas',{datos:result})
                 }else{

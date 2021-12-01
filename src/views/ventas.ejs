@@ -8,24 +8,26 @@
     <title>VentasPrueba</title>
 </head>
 <body>
-    <div id="padre">
-        <thead>
-            <div id="part1">
-                <p>Productos</p>
-                <select id="Productos" class="caja">
-                </select>
-            </div>
-            <div id="part2">
-                <p>Precio</p>
-                <select type="text" id="precio" class="caja">
-                </select>
-            </div>
-            <div id="part3">
-                <p>Cantidad</p>
-                <input type="number" id="cantidad" class="caja">  
-            </div>
-        </thead>
-    </div>
+    <form action="/seleccion" method="get">
+        <div id="padre">
+            <thead>
+                <div id="part1">
+                    <p>Productos</p>
+                    <select id="Productos" class="caja">
+                    </select>
+                </div>
+                <div id="part2">
+                    <p>Precio</p>
+                    <select type="text" id="precio" class="caja">
+                    </select>
+                </div>
+                <div id="part3">
+                    <p>Cantidad</p>
+                    <input type="number" id="cantidad" class="caja">  
+                </div>
+            </thead>
+        </div>
+    </form> 
     <button type="button" name="button" id="button" onclick="continuar()">continuar</button>
     <table id="info">
         <thead>
@@ -51,5 +53,18 @@
             <input type="text" id="Total" class="caja"></br>
         </div>
     </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <script>paypal.Buttons({
+        createOrder:function(data, actions){
+            return actions.order.create({
+                purchase_units:[{
+                    amount: {
+                        value:115
+                    }
+                }]
+            });
+        }
+    }).render('body');</script>
 </body>
 </html>

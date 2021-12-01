@@ -1,5 +1,4 @@
-.registro{
-    contain: content;
-    align-items: center;
+.agrega-producto{
     border: 2px solid black;
+    color: blue;
 }

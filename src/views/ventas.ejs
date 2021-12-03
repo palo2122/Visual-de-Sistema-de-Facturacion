@@ -10,20 +10,26 @@
 <body>
         <div id="padre">
             <thead>
-                <form action="/seleccion" method="post">
-                    <div id="part1">
+                    <div id="part1" class="parte1">
                         <p>Productos</p>
-                        <select type="text" name="Producto" id="Producto" class="ingreso">
-                            <input type="text">
+                        <select name="" id="">
+                            <% if(typeof datos !== 'undefined'){ %>
+                                <% for (index in datos){ %>
+                                    <option><%= datos[index].Producto %></option>
+                                <% } %>
+                            <% } %>
                         </select>
                     </div>
                     <div id="part2">
                         <p>Precio</p>
                         <select type="number" name="Precio" id="Precio" class="ingreso">
-                            <input type="number">
+                            <% if(typeof datos !== 'undefined'){ %>
+                                <% for (index in datos){ %>
+                                    <option><%= datos[index].Precio %> <b>Soles</b></option>
+                                <% } %>
+                            <% } %>
                         </select>
                     </div>
-                </form>
                 <div id="part3">
                     <p>Cantidad</p>
                     <input type="number" id="cantidad" class="caja">  

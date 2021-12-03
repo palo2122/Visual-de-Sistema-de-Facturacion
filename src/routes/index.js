@@ -9,8 +9,22 @@ router.get('/', (req, res)=>{
 })
 
 router.get('/vender',(req,res)=>{
-    res.render('ventas')
+    client.connect(async (err)=>{
+        if (!err) {
+            const collection = client.db("tienda").collection("productoPrecio")
+            collection.find().toArray((err,result)=>{
+                if (!err) {
+                    res.render('ventas',{datos:result})
+                }else{
+                    res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
+                }
+            })
+        }else{
+            res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
+        }
+    })
 })
+
 
 router.get('/', (req, res)=>{
     res.send('index', {nombre:"Python", dia:"Lunes", dias:["Lunes", "Martes", "Miercoles", "..."]})
@@ -35,7 +49,6 @@ router.post('/agregarProducto', (req,res)=>{
             const collection = client.db("tienda").collection("productoPrecio")
             console.log(req.body)
             collection.insertOne( req.body )
-            res.send("Resultado:[{'resuesta':'OK'}]")
         }else{
             res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
         }

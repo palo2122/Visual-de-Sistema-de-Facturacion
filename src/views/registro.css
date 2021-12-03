@@ -1,4 +1,47 @@
-.agrega-producto{
-    border: 2px solid black;
-    color: blue;
+body{
+    background-color: #b9ffff;
+}
+
+.cabeza{
+    background-color: #81c9fa;
+}
+
+.titulo{
+    color: #008eea;
+    font-size: xx-large;
+    text-align: center;
+}
+
+.registro{
+    background-color: #81c9fa;
+    text-align: center;
+    color: white;
+    border-radius: 2em;
+    border: #002973 2px solid;
+    align-items: center;
+    align-content: center;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.producto{
+    color: #155db1;
+    font-size:xx-large;
+    display: block;
+    margin: 10px;
+}
+
+.ingreso{
+    font-size:20px;    
+    border-radius: 1em;
+    border: gray solid 0.01em;
+    margin: 10px;
+}
+
+.agrego{
+    margin: 10px;
+    font-size: 25px;
+    border: #3b38ff solid 0.09em;
+    border-radius: 0.5em;
 }

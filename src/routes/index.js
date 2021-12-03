@@ -42,15 +42,35 @@ router.post('/agregarProducto', (req,res)=>{
     })
 })
 
-router.get('/seleccion', (req, res)=>{
+router.post('/seleccion', (req, res)=>{
     client.connect(async (err)=>{
         if(!err){
             const collection = client.db("tienda").collection("productoPrecio")
+            console.log(req.body)
             collection.find().toArray((err, result)=>{
                 if (!err) {
                     res.render('ventas',{datos:result})
                 }else{
                     res.send("'resultado':[{'respuesta':'error al traer la data'}, {'mensaje':"+ err +"}]")
+                }
+            })
+        }else{
+            res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
+        }
+    })
+})
+
+router.post('/seleccionProducto', (req,res)=>{
+    var productoLocal = req.body.producto;
+    client.connect(async (err) =>{
+        if(!err){
+            const collection = client.db("tienda").collection("productoPrecio")
+            collection.find({producto:{$eq:productoLocal}}).toArray((err, result)=>{
+                if (!err) {
+                    res.send('ventas', {datos:result})
+                    res.render('ventas', {datos:result})
+                }else{
+                    res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
                 }
             })
         }else{

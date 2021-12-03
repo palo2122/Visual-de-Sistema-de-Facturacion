@@ -9,20 +9,24 @@
 </head>
 <body>
     <header>
-        <h1>Ventas Life</h1>
+        <div class="cabeza">
+            <h1 class="titulo">Ventas Life</h1>
+        </div>
     </header>
-    <div id="registro">
+    <div id="registro" class="registro">
         <form action="/agregarProducto" method="post">
             <div id="agrega-producto">
-                <label>Ingrese Productos:</label>
-                <input type="text"  placeholder="Nombre de Producto" name="Producto" id="Producto">
+                <label class="producto">Ingrese Productos:</label>
+                <input type="text"  placeholder="      Nombre de Producto" name="Producto" id="Producto" class="ingreso">
             </div>
             <div id="agrega-precio">
-                <label>Ingrese Precio:</label>
-                <input type="number" placeholder="Precio de Producto" name="Precio" id="Precio">    
+                <label class="producto">Ingrese Precio:</label>
+                <input type="number" placeholder="      Precio de Producto" name="Precio" id="Precio" class="ingreso">    
             </div>
-            <button type="submit">Agregar</button>
+            <button class="agrego" type="submit">Agregar</button>
         </form>
     </div>
+
+    <a class="direccion" href="/vender">Ir a Ventas</a>
 </body>
 </html>

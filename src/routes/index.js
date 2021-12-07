@@ -62,7 +62,7 @@ router.post('/seleccion', (req, res)=>{
             console.log(req.body)
             collection.find().toArray((err, result)=>{
                 if (!err) {
-                    res.render('ventas',{datos:result})
+                    res.render('ventas',{result})
                 }else{
                     res.send("'resultado':[{'respuesta':'error al traer la data'}, {'mensaje':"+ err +"}]")
                 }

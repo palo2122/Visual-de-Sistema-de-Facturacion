@@ -1,7 +1,16 @@
 .parte1{
-    text-align: center;
+    text-align:right;
     color: aqua;
-    align-items: center;
-    margin: 0 auto;
     display: block;
+    
+}
+
+thead{
+    columns: 0;
+    border: black 2px solid;
+}
+
+.principal{
+    columns: 0;
+    fill: black ;
 }

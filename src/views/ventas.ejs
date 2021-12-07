@@ -8,35 +8,35 @@
     <title>VentasPrueba</title>
 </head>
 <body>
-        <div id="padre">
+        <div id="padre" class="principal">
             <thead>
                     <div id="part1" class="parte1">
                         <p>Productos</p>
-                        <select name="" id="">
+                        <select type="text" name="Producto" id="Producto" class="ingreso">
                             <% if(typeof datos !== 'undefined'){ %>
                                 <% for (index in datos){ %>
-                                    <option><%= datos[index].Producto %></option>
+                                    <option id=""><%= datos[index].Producto %></option>
                                 <% } %>
                             <% } %>
                         </select>
                     </div>
-                    <div id="part2">
+                    <div id="part2" class="parte2">
                         <p>Precio</p>
                         <select type="number" name="Precio" id="Precio" class="ingreso">
                             <% if(typeof datos !== 'undefined'){ %>
                                 <% for (index in datos){ %>
-                                    <option><%= datos[index].Precio %> <b>Soles</b></option>
+                                    <option id=""><%= datos[index].Precio %></option>
                                 <% } %>
                             <% } %>
                         </select>
                     </div>
-                <div id="part3">
+                <div id="part3" class="parte3">
                     <p>Cantidad</p>
-                    <input type="number" id="cantidad" class="caja">  
+                    <input type="number" id="Cantidad" class="caja">  
                 </div>
             </thead>
         </div>
-    <button type="button" name="button" id="button" onclick="continuar()">continuar</button>
+    <button type="button" name="button" id="button" onclick="agregar()">continuar</button>
     <table id="info">
         <thead>
             <tr>
@@ -68,11 +68,13 @@
             return actions.order.create({
                 purchase_units:[{
                     amount: {
-                        value:115
+                        value: total= document.getElementById("Total").value
                     }
                 }]
             });
         }
     }).render('body');</script>
+    <script src="./ventas.js">
+    </script>
 </body>
 </html>

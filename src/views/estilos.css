@@ -1,16 +1,33 @@
-.parte1{
-    text-align:right;
-    color: aqua;
-    display: block;
-    
+body{
+    background-color: gray;
 }
-
-thead{
-    columns: 0;
-    border: black 2px solid;
-}
-
 .principal{
-    columns: 0;
-    fill: black ;
+    columns: 3;
+    width: 30%;
+    margin: 0%;
+    letter-spacing: 0;
+}
+.parte1{
+    color: blue;
+}
+.ingreso{
+    display: block;
+}
+.parte2{
+    color: blueviolet;
+}
+.ingreso1{
+    display: block;
+}
+.parte3{
+    width: 50%;
+    color: cadetblue;
+}
+.ingreso2{
+    display:block;
+}
+.totalidad{
+    display: block;
+    width: 50%;
+    left: 100%;
 }

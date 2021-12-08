@@ -8,10 +8,13 @@
     <title>VentasPrueba</title>
 </head>
 <body>
+    <header>
+        <h1>VentasLife</h1>
+    </header>
         <div id="padre" class="principal">
             <thead>
                     <div id="part1" class="parte1">
-                        <p>Productos</p>
+                        <b>Productos</b>
                         <select type="text" name="Producto" id="Producto" class="ingreso">
                             <% if(typeof datos !== 'undefined'){ %>
                                 <% for (index in datos){ %>
@@ -21,8 +24,8 @@
                         </select>
                     </div>
                     <div id="part2" class="parte2">
-                        <p>Precio</p>
-                        <select type="number" name="Precio" id="Precio" class="ingreso">
+                        <b>Precio</b>
+                        <select type="number" name="Precio" id="Precio" class="ingreso1">
                             <% if(typeof datos !== 'undefined'){ %>
                                 <% for (index in datos){ %>
                                     <option id=""><%= datos[index].Precio %></option>
@@ -30,10 +33,10 @@
                             <% } %>
                         </select>
                     </div>
-                <div id="part3" class="parte3">
-                    <p>Cantidad</p>
-                    <input type="number" id="Cantidad" class="caja">  
-                </div>
+                    <div id="part3" class="parte3">
+                        <b>Cantidad</b>
+                        <input type="number" id="Cantidad" class="ingreso2">  
+                    </div>
             </thead>
         </div>
     <button type="button" name="button" id="button" onclick="agregar()">continuar</button>
@@ -47,18 +50,18 @@
             </tr>
         </thead>
     </table>
-    <div id="asd">
+    <div id="asd" class="totalidad">
         <div>
             <p>SubTotal</p>
-            <input type="text" id="SubTotal" class="caja">
+            <input type="number" id="SubTotal" class="caja">
         </div>
         <div>
             <p>IGV</p>
-            <input type="text" id="IGV" class="caja">
+            <input type="number" id="IGV" class="caja">
         </div>
         <div>
             <p>Total:</p>
-            <input type="text" id="Total" class="caja"></br>
+            <input type="number" id="Total" class="caja"></br>
         </div>
     </div>
     <br>

@@ -22,7 +22,6 @@ function agregar(){
         alert("Producto agregado")
         resultado()
     }
-    resultado()
 }
 
 function verificar(p){
@@ -42,8 +41,5 @@ function resultado(){
     }
     document.getElementById("SubTotal").value=sum;
     document.getElementById("IGV").value=(sum*0.18).toFixed(2)
-    document.getElementById("Total").value=(sum+sum*0.18)
+    document.getElementById("Total").value=(sum+sum*0.18).toFixed(2)
 }
-
-let total = document.getElementById("Total").value
-console.log(total)

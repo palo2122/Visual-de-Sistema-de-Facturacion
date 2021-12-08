@@ -5,7 +5,17 @@ const router = express.Router()
 const client = require('../libs/connects')()
 
 router.get('/', (req, res)=>{
-    res.render('login')
+    client.connect(async(err)=>{
+        const collection = client.db("users").collection("userpasword")
+        collection.find().toArray((err, result)=>{
+            if (!err) {
+                res.render('login')
+            }
+            else{
+                    
+            }
+        })
+    })
 })
 router.get('/registro', (req,res)=>{
     res.render('registrar')

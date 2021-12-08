@@ -5,19 +5,24 @@ const router = express.Router()
 const client = require('../libs/connects')()
 
 router.get('/', (req, res)=>{
-    client.connect(async(err)=>{
-        const collection = client.db("users").collection("userpasword")
-        collection.find().toArray((err, result)=>{
-            if (!err) {
-                res.render('login')
-            }
-            else{
-                    
-            }
-        })
+    client.connect(async (err)=>{
+        if (!err) {
+            const collection = client.db("users").collection("userpasword")
+            collection.find().toArray((err,result)=>{
+                if (!err) {
+                    res.render('formulario', result)
+                }else{
+                    res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
+                }
+            })
+        }else{
+            res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
+        }
     })
 })
-router.get('/registro', (req,res)=>{
+
+
+router.get('/registrar', (req,res)=>{
     res.render('registrar')
 })
 

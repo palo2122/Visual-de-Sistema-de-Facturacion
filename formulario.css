@@ -21,12 +21,9 @@
     padding: 5px 10px;
 }
 
-<i class="fa fa-user-circle" aria-hidden="true"></i>
-<i class="fa fa-key" aria-hidden="true"></i>
-
 #login-box .form .item i {
     color: white;
-    font-size: 18px;
+    font-size: 18px ;
 }
 
 #login-box button {
@@ -37,9 +34,9 @@
     font-size: 18px; 
     color: rgb(10, 8, 8); 
     border-radius: 25px;
-    background-image: #70e1f5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-image: #70e1f5;  
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  
+    background: linear-gradient(to right, #ffd194, #70e1f5); 
     ;
 }
 
@@ -47,8 +44,8 @@ body {
     background: #b92b27;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    center; 
     background-size: 100% auto; 
     
 }
+
 

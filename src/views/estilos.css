@@ -1,33 +1,219 @@
-body{
-    background-color: gray;
+html,
+body {
+	height: 100%;
 }
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
 .principal{
     columns: 3;
-    width: 30%;
+    width: 50%;
     margin: 0%;
-    letter-spacing: 0;
 }
 .parte1{
     color: blue;
 }
-.ingreso{
-    display: block;
-}
 .parte2{
     color: blueviolet;
 }
-.ingreso1{
-    display: block;
-}
 .parte3{
-    width: 50%;
     color: cadetblue;
 }
-.ingreso2{
-    display:block;
+td,th{
+    border: 1px solid black;
+    border-collapse: separate;
+    border-spacing: 5px 2px;
+}
+table{
+    width: 80%;
+}
+
+/***************ESTILOS BUTTON**************/
+.btn {
+	position: relative;
+	left: 10px;
+    background: #eb94d0;
+    background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -moz-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -ms-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: -o-linear-gradient(top, #eb94d0, #2079b0);
+    background-image: linear-gradient(to bottom, #eb94d0, #2079b0);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 25px;
+    text-shadow: 3px 2px 1px #9daef5;
+    -webkit-box-shadow: 6px 5px 24px #666666;
+    -moz-box-shadow: 6px 5px 24px #666666;
+    box-shadow: 6px 5px 24px #666666;
+    font-family: Arial;
+    color: #fafafa;
+    font-size: 18px;
+    padding: 15px;
+    text-decoration: none;
+}
+.btn:hover {
+    background: #2079b0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+    text-decoration: none;
+  }
+
+/*********ESTILOS SELECT*************/
+.content-select select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.content-select select::-ms-expand {
+    display: none;
+}
+.content-select{
+	width: 100%;
+	position: relative;
+	left: 10px;
+}
+ 
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 42px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+ 
+.content-select select:hover{
+	background: #B1E8CD;
+}
+ 
+.content-select i{
+	position: absolute;
+	right: 20px;
+	top: calc(50% - 13px);
+	width: 16px;
+	height: 16px;
+	display: block;
+	border-left:4px solid #2AC176;
+	border-bottom:4px solid #2AC176;
+	transform: rotate(-45deg); /* Giramos el cuadrado */
+	transition: all 0.25s ease;
+}
+ 
+.content-select:hover i{
+	margin-top: 3px;
+}
+/***************FIN DE ESTILOS SELECT**********/
+/*/
+/********ESTILOS INPUT**********/
+/***/
+.content-input input{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.content-input input::-ms-expand {
+    display: none;
+}
+.content-input{
+	left: 10px;
+	width: 50%;
+	position: relative;
+}
+ 
+.content-input input{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+  	padding: 7px 10px;
+  	height: 25px;
+  	outline: 0; 
+  	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	font-size: 1em;
+	color: #999;
+	font-family: 
+	'Quicksand', sans-serif;
+	border:2px solid rgba(0,0,0,0.2);
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.25s ease;
+}
+ 
+.content-input input:hover{
+	background: #B1E8CD;
+}
+/**********FIN DE ESTILOS INPUT*****************/
+
+/****************ESTILOS TABLE**********************/
+.container {
+	position:static;
+	height: 0.4%;
+	width: 33%;
+	display: block;
+	margin: 0 auto;
+	transform: translate(-50%, -50%);
+}
+
+table {
+	width: 700px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px #2079b0;
+}
+
+th,
+td {
+	padding: 10px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: center;
+}
+
+thead,th {
+	background-color: #55608f;
+	text-align: center;
+}
+/*******************FIN DE ESTILOS TABLE**************************/
+.caja{
+	position: relative;
+	width: 10%;
+	left: 935px;
+	padding: 0;
+	font-size: large;
+}
+.title{
+	position: relative;
+	width: 25%;
+	font-size: large;
+	left: 935px;
+	color: blanchedalmond;
 }
 .totalidad{
-    display: block;
-    width: 50%;
-    left: 100%;
+	margin: 0;
+	padding: 0;
 }

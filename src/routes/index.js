@@ -1,16 +1,26 @@
 const { render } = require('ejs');
 const fs = require('fs')
-const express = require('express')
+const express = require('express');
+const res = require('express/lib/response');
 const router = express.Router()
 const client = require('../libs/connects')()
 
-router.get('/', (req, res)=>{
+router.get('/', (req,res)=>{
+    res.render('formulario')
+})
+
+router.post('/', (req, res)=>{
+    var user = req.body.user;
+    var pasword = req.body.pasword;
     client.connect(async (err)=>{
         if (!err) {
             const collection = client.db("users").collection("userpasword")
-            collection.find().toArray((err,result)=>{
-                if (!err) {
-                    res.render('formulario', result)
+            console.log(req.body)
+            collection.find({Usuario:{$eq:req.Usuario}},
+                {Contraseña:{$eq:req.Contraseña}}).toArray((err,result)=>{
+                console.log(result)
+                if (result==user|result==pasword|!err) {
+                    res.render('registrar')
                 }else{
                     res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
                 }
@@ -42,12 +52,6 @@ router.get('/vender',(req,res)=>{
         }
     })
 })
-
-
-router.get('/', (req, res)=>{
-    res.send('index', {nombre:"Python", dia:"Lunes", dias:["Lunes", "Martes", "Miercoles", "..."]})
-})
-
 router.get('/reporte', (req,res)=>{
     res.send('<h1>Pagina del Reporte</h1>')
 })

@@ -15,54 +15,75 @@
             <thead>
                     <div id="part1" class="parte1">
                         <b>Productos</b>
-                        <select type="text" name="Producto" id="Producto" class="ingreso">
+                        <div class="content-select">
+                            <select type="text" name="Producto" id="Producto" class="ingreso">
                             <% if(typeof datos !== 'undefined'){ %>
                                 <% for (index in datos){ %>
                                     <option id=""><%= datos[index].Producto %></option>
                                 <% } %>
                             <% } %>
-                        </select>
+                            </select>
+                            <i></i>
+                        </div>
                     </div>
                     <div id="part2" class="parte2">
                         <b>Precio</b>
-                        <select type="number" name="Precio" id="Precio" class="ingreso1">
+                        <div class="content-select">
+                            <select type="number" name="Precio" id="Precio" class="ingreso1">
                             <% if(typeof datos !== 'undefined'){ %>
                                 <% for (index in datos){ %>
                                     <option id=""><%= datos[index].Precio %></option>
                                 <% } %>
                             <% } %>
-                        </select>
+                            </select>
+                            <i></i>
+                        </div>
                     </div>
                     <div id="part3" class="parte3">
                         <b>Cantidad</b>
-                        <input type="number" id="Cantidad" class="ingreso2">  
+                        <div class="content-input">
+                            <input type="number" id="Cantidad" class="ingreso2">  
+                        </div>
                     </div>
             </thead>
         </div>
-    <button type="button" name="button" id="button" onclick="agregar()">continuar</button>
-    <table id="info">
-        <thead>
-            <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>SubTotal</th>
-            </tr>
-        </thead>
-    </table>
+        <br>
+        <button type="button" class="btn" name="button" id="button" onclick="agregar()">Continuar<span></span></button>
+        <br>
+        <div class="container">
+            <table id="info" class="table">
+            <br>
+                <thead class="table">
+                    <tr class="tabla">
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>SubTotal</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <br>
+        <br>
+        <br>
     <div id="asd" class="totalidad">
-        <div>
-            <p>SubTotal</p>
-            <input type="number" id="SubTotal" class="caja">
-        </div>
-        <div>
-            <p>IGV</p>
-            <input type="number" id="IGV" class="caja">
-        </div>
-        <div>
-            <p>Total:</p>
-            <input type="number" id="Total" class="caja"></br>
-        </div>
+        <thead>
+            <div class="subtotal">
+                <b class="title">SubTotal</b>
+                <br>
+                <input type="number" id="SubTotal" class="caja">
+            </div>
+            <div class="igv">
+                <b class="title">IGV</b>
+                <br>
+                <input type="number" id="IGV" class="caja">
+            </div>
+            <div class="total">
+                <b class="title">Total:</b>
+                <br>
+                <input type="number" id="Total" class="caja"></br>
+            </div>
+        </thead>
     </div>
     <br>
     <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
@@ -73,7 +94,12 @@
                     amount: {
                         value: total= document.getElementById("Total").value
                     }
-                }]
+                }],
+                application_context: {
+                    brand_name: `VentasLife`,
+                    landing_page: 'NO_PREFERENCE',
+                    user_action: 'PAY_NOW',
+                }
             });
         }
     }).render('body');</script>

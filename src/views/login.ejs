@@ -11,16 +11,15 @@
     <div class="login-box">
       
       <h1>LOGIN</h1>
-      <form>
+      <form action="/" method="post">
         <!-- USERNAME INPUT -->
-        <label for="username"><i class="fas fa-user icon"></i> Usuario</label>
-        <input type="text" placeholder="Correo">
+        <label for="Usuario"><i class="fas fa-user icon"></i> Usuario</label>
+        <input type="text" placeholder="Correo" id="Usuario" name="Usuario">
         <!-- PASSWORD INPUT -->
-        <label for="password"> <i class="fas fa-key icon"></i> Contraseña</label>
-        <input type="password" placeholder="Contraseña">
-        <input type="submit"  value="Log In">
-        <a href="#">Lost your Password?</a><br>
-        <a href="#">Don't have An account?</a>
+        <label for="Contraseña"> <i class="fas fa-key icon"></i> Contraseña</label>
+        <input type="password" placeholder="Contraseña" id="Contraseña" name="Contraseña">
+        <input type="submit"  value="LogIn" href="">
+        <a href="/registrarse">Registrarse</a><br>
       </form>
     </div>
   </body>

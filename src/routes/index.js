@@ -2,25 +2,34 @@ const { render } = require('ejs');
 const fs = require('fs')
 const express = require('express');
 const res = require('express/lib/response');
+const { route } = require('express/lib/application');
+const req = require('express/lib/request');
 const router = express.Router()
 const client = require('../libs/connects')()
+const { Router } = require('express');
+
+
 
 router.get('/', (req,res)=>{
-    res.render('formulario')
+    res.render('login')
+})
+
+router.get('/registrarse', (req,res)=>{
+    res.render('registrarse')
 })
 
 router.post('/', (req, res)=>{
-    var user = req.body.user;
-    var pasword = req.body.pasword;
     client.connect(async (err)=>{
         if (!err) {
             const collection = client.db("users").collection("userpasword")
-            console.log(req.body)
-            collection.find({Usuario:{$eq:req.Usuario}},
-                {Contraseña:{$eq:req.Contraseña}}).toArray((err,result)=>{
-                console.log(result)
-                if (result==user|result==pasword|!err) {
-                    res.render('registrar')
+            collection.find().toArray((err,result)=>{
+                if (!err) {
+                    console.log(req.body)
+                    if (result) {
+                        res.render('registrar')
+                    }else{
+                        res.render('registrarse')
+                    }
                 }else{
                     res.send("resultado:[{'respuesta':'error al cargar'}], {'mensaje':"+ err +"}")
                 }

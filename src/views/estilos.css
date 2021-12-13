@@ -204,7 +204,11 @@ thead,th {
 	width: 10%;
 	left: 935px;
 	padding: 0;
-	font-size: large;
+	font-size:larger;
+	background: transparent;
+	border: white 2px solid;
+	text-align: center;
+	border-radius: 10px;
 }
 .title{
 	position: relative;
@@ -212,6 +216,7 @@ thead,th {
 	font-size: large;
 	left: 935px;
 	color: blanchedalmond;
+	text-align: center;
 }
 .totalidad{
 	margin: 0;

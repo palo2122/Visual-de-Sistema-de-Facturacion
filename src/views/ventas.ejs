@@ -5,16 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="logo.png">
     <title>VentasPrueba</title>
 </head>
 <body>
     <header>
-        <h1>VentasLife</h1>
+        <img src="logo.png" class="imageninicial"><h1>VentasLife</h1>
     </header>
         <div id="padre" class="principal">
             <thead>
                     <div id="part1" class="parte1">
-                        <b>Productos</b>
+                        <b class="titlo">Productos</b>
                         <div class="content-select">
                             <select type="text" name="Producto" id="Producto" class="ingreso">
                             <% if(typeof datos !== 'undefined'){ %>
@@ -27,7 +31,7 @@
                         </div>
                     </div>
                     <div id="part2" class="parte2">
-                        <b>Precio</b>
+                        <b class="titlo">Precio</b>
                         <div class="content-select">
                             <select type="number" name="Precio" id="Precio" class="ingreso1">
                             <% if(typeof datos !== 'undefined'){ %>
@@ -40,7 +44,7 @@
                         </div>
                     </div>
                     <div id="part3" class="parte3">
-                        <b>Cantidad</b>
+                        <b class="titlo">Cantidad</b>
                         <div class="content-input">
                             <input type="number" id="Cantidad" class="ingreso2">  
                         </div>
@@ -87,12 +91,13 @@
         </thead>
     </div>
     <br>
-    <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <script class="paypal" src="https://www.paypal.com/sdk/js?client-id=sb"></script>
     <script>paypal.Buttons({
         createOrder:function(data, actions){
             return actions.order.create({
                 purchase_units:[{
                     amount: {
+                        currency_code: 'USD',
                         value: total= document.getElementById("Total").value
                     }
                 }],
@@ -100,6 +105,8 @@
                     brand_name: `VentasLife`,
                     landing_page: 'NO_PREFERENCE',
                     user_action: 'PAY_NOW',
+                    return_url: `http://localhost:2124/compraterminada`,
+                    cancel_url: `http://localhost:2124`
                 }
             });
         }

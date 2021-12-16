@@ -9,13 +9,16 @@ const client = require('../libs/connects')()
 const { Router } = require('express');
 
 
-
 router.get('/', (req,res)=>{
     res.render('login')
 })
 
 router.get('/registrarse', (req,res)=>{
     res.render('registrarse')
+})
+
+router.get('/compraterminada', (req,res)=>{
+    res.render('final')
 })
 
 router.post('/', (req, res)=>{
@@ -39,7 +42,6 @@ router.post('/', (req, res)=>{
         }
     })
 })
-
 
 router.get('/registrar', (req,res)=>{
     res.render('registrar')

@@ -1,6 +1,39 @@
 html,
 body {
 	height: 100%;
+	width: 100%;
+}
+header{
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	bottom: 5px;
+	position: relative;
+}
+h1{
+	font-size:40px;
+	margin: 5px;
+	padding: 2px;
+	left: 5px;
+	position: relative;
+	top: 2px;
+}
+.imageninicial{
+	position: relative;
+	width: 3%;
+	padding: 2px;
+	float: left;
+	margin: 1px;
+	left: 2px;
+	top: 2px;
+}
+
+.titlo{
+	font-family: 'Oswald', sans-serif;
+	font-size: large;
+	position: relative;
+	left: 25px;
+	color: #fff;
 }
 
 body {
@@ -15,15 +48,7 @@ body {
     width: 50%;
     margin: 0%;
 }
-.parte1{
-    color: blue;
-}
-.parte2{
-    color: blueviolet;
-}
-.parte3{
-    color: cadetblue;
-}
+
 td,th{
     border: 1px solid black;
     border-collapse: separate;
@@ -221,4 +246,14 @@ thead,th {
 .totalidad{
 	margin: 0;
 	padding: 0;
+}
+
+.paypal{
+	width: 10%;
+	height: auto;
+	align-items: center;
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	box-sizing: border-box;
 }

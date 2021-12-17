@@ -91,7 +91,10 @@
         </thead>
     </div>
     <br>
-    <script class="paypal" src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    <footer>
+        <script class="paypal" src="https://www.paypal.com/sdk/js?client-id=sb"></script>
+    </footer>
+    
     <script>paypal.Buttons({
         createOrder:function(data, actions){
             return actions.order.create({

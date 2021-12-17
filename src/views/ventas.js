@@ -39,7 +39,7 @@ function resultado(){
     for(var i = 1; i<tb.rows.length; i++){
         sum = sum +parseFloat(tb.rows[i].cells[3].innerHTML)
     }
-    document.getElementById("SubTotal").value=sum;
+    document.getElementById("SubTotal").value=sum.toFixed(2);
     document.getElementById("IGV").value=(sum*0.18).toFixed(2)
     document.getElementById("Total").value=(sum+sum*0.18).toFixed(2)
 }

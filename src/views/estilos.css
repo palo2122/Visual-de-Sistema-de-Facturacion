@@ -3,6 +3,13 @@ body {
 	height: 100%;
 	width: 100%;
 }
+footer{
+	background: #fff;
+	margin: 0;
+	padding: 0;
+	bottom: 5px;
+	position: relative;
+}
 header{
 	background: #fff;
 	margin: 0;
@@ -54,8 +61,9 @@ td,th{
     border-collapse: separate;
     border-spacing: 5px 2px;
 }
-table{
+tr.table{
     width: 80%;
+	position: relative;
 }
 
 /***************ESTILOS BUTTON**************/
@@ -201,7 +209,8 @@ table{
 	transform: translate(-50%, -50%);
 }
 
-table {
+table.table {
+	position: relative;
 	width: 700px;
 	border-collapse: collapse;
 	overflow: hidden;
@@ -246,14 +255,4 @@ thead,th {
 .totalidad{
 	margin: 0;
 	padding: 0;
-}
-
-.paypal{
-	width: 10%;
-	height: auto;
-	align-items: center;
-	display: block;
-	margin: 0 auto;
-	text-align: center;
-	box-sizing: border-box;
 }
